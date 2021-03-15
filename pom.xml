@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+   <groupId>com.myspace</groupId>
+   <artifactId>rds-rafael-webservice</artifactId>
+   <version>1.0.0-SNAPSHOT</version>
+   <packaging>kjar</packaging>
+   <name>rds-rafael-webservice</name>
+   <description />
+   <dependencyManagement>
+      <dependencies>
+         <dependency>
+            <groupId>com.redhat.ba</groupId>
+            <artifactId>ba-platform-bom</artifactId>
+            <version>7.5.1.redhat-00001</version>
+            <type>pom</type>
+            <scope>import</scope>
+         </dependency>
+      </dependencies>
+   </dependencyManagement>
+   <dependencies>
+      <!-- Public KIE API -->
+      <dependency>
+         <groupId>org.kie</groupId>
+         <artifactId>kie-api</artifactId>
+      </dependency>
+      <!-- Core dependencies for process engine -->
+      <dependency>
+         <groupId>org.jbpm</groupId>
+         <artifactId>jbpm-flow</artifactId>
+      </dependency>
+      <dependency>
+         <groupId>org.jbpm</groupId>
+         <artifactId>jbpm-flow-builder</artifactId>
+      </dependency>
+      <dependency>
+         <groupId>org.jbpm</groupId>
+         <artifactId>jbpm-bpmn2</artifactId>
+      </dependency>
+      <dependency>
+         <groupId>org.jbpm</groupId>
+         <artifactId>jbpm-runtime-manager</artifactId>
+      </dependency>
+      <dependency>
+         <groupId>org.jbpm</groupId>
+         <artifactId>jbpm-persistence-jpa</artifactId>
+      </dependency>
+      <dependency>
+         <groupId>org.jbpm</groupId>
+         <artifactId>jbpm-query-jpa</artifactId>
+      </dependency>
+      <dependency>
+         <groupId>org.jbpm</groupId>
+         <artifactId>jbpm-audit</artifactId>
+      </dependency>
+      <dependency>
+         <groupId>org.jbpm</groupId>
+         <artifactId>jbpm-kie-services</artifactId>
+      </dependency>
+      <!-- Dependency needed for default WorkItemHandler implementations. -->
+      <dependency>
+         <groupId>org.jbpm</groupId>
+         <artifactId>jbpm-workitems-core</artifactId>
+      </dependency>
+      <!-- Logging dependency. You can use any logging framework compatible with slf4j. -->
+      <dependency>
+         <groupId>ch.qos.logback</groupId>
+         <artifactId>logback-classic</artifactId>
+         <version>${logback.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>org.kie</groupId>
+         <artifactId>kie-api</artifactId>
+      </dependency>
+      <dependency>
+         <groupId>org.jbpm</groupId>
+         <artifactId>jbpm-kie-services</artifactId>
+      </dependency>
+      <dependency>
+         <groupId>org.jbpm</groupId>
+         <artifactId>jbpm-services-cdi</artifactId>
+      </dependency>
+      <dependency>
+         <groupId>org.drools</groupId>
+         <artifactId>drools-compiler</artifactId>
+      </dependency>
+      <!-- Dependency for persistence support. -->
+      <dependency>
+         <groupId>org.drools</groupId>
+         <artifactId>drools-persistence-jpa</artifactId>
+      </dependency>
+      <!-- Dependencies for decision tables, templates, and scorecards.
+For other assets, declare org.drools:business-central-models-* dependencies. -->
+      <dependency>
+         <groupId>org.drools</groupId>
+         <artifactId>drools-decisiontables</artifactId>
+      </dependency>
+      <dependency>
+         <groupId>org.drools</groupId>
+         <artifactId>drools-templates</artifactId>
+      </dependency>
+      <dependency>
+         <groupId>org.drools</groupId>
+         <artifactId>drools-scorecards</artifactId>
+      </dependency>
+      <!-- Dependency for loading KJARs from a Maven repository using KieScanner. -->
+      <dependency>
+         <groupId>org.kie</groupId>
+         <artifactId>kie-ci</artifactId>
+      </dependency>
+      <dependency>
+         <groupId>org.kie.server</groupId>
+         <artifactId>kie-server-client</artifactId>
+      </dependency>
+      <dependency>
+         <groupId>org.uberfire</groupId>
+         <artifactId>uberfire-rest-client</artifactId>
+      </dependency>
+   </dependencies>
+   <build>
+      <plugins>
+         <plugin>
+            <groupId>org.kie</groupId>
+            <artifactId>kie-maven-plugin</artifactId>
+            <version>${kie.version}</version>
+            <extensions>true</extensions>
+         </plugin>
+      </plugins>
+   </build>
+</project>
